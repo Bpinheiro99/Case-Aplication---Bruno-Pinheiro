@@ -1,0 +1,20 @@
+/* ESTILO.CSS*/
+*{margin: 0; padding:  0;}
+
+body{font-family: helvetica,arial; font-size: 15px; color: #333;}
+
+/*cor e dimensão do cabeçalho*/
+header{height: 80px; background-color: #00CED1; padding: 10px 0;} /*padding é margem interna*/
+
+/*cor e dimensão do rodapé*/
+footer{height: 20px; background-color: #00CED1; padding: 10px 0; text-align: center; font-size: 15px;color: #333;} 
+
+/*class*/
+.container{margin: 0 auto; width: 960px;} /*primeiro valor ate o teto*/
+
+/*id*/
+#conteudo{padding: 0 0;}
+
+#menu{float: right; padding: 30px 100px} /*float menu na direita, padding alinha*/
+#menu a{text-decoration: :none;padding: 43px 50px; color:  #262626} /*distancia do menu*/
+#menu a:hover{background-color: #44b874;}
