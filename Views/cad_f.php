@@ -11,6 +11,15 @@
 		 	src.value += texto.substring(0,1);
 		}
 	}
+
+	function somenteNumeros(num){
+		var er=/[^0-9-./]/;
+		er.lastIndex=0;
+		var campo=num;
+		if(er.test(campo.value)){
+			campo.value="";
+		}
+	}
 </script>
 </head>
 </html>
@@ -27,24 +36,24 @@
 			<input type="textx" name="nome" placeholder="Nome" id="nome" maxlength="100" onkeypress="volta_input(this.id)" value="" size="30" class="text inputErro"required>
 
 			<br><br>
-			<label><b><font face="geneva">*Data de Nascimento:</font></b></label>
-			<input name="data_nascimento" placeholder="Data de Nascimento" id="data_nascimento" method="post" type="textx" maxlength="10" size="30" onkeypress="mascara(this,'##/##/####')"required>
+			<label><b><font face="geneva">*Data de Nascimento:</font></b></label><p>Somente Numeros</p>
+			<input name="data_nascimento" placeholder="Data de Nascimento" id="data_nascimento" method="post" type="textx" maxlength="10" size="30" onkeypress="mascara(this,'##/##/####')"onkeyup="somenteNumeros(this);"required>
 
 			<br><br>
-			<label><b><font face="geneva">*CPF:</font></b></label>
-			<input name="cpf" placeholder="CPF" id="cpf" method="post" type="textx" maxlength="14" size="30" onkeypress="mascara(this,'###.###.###-##')"required>
+			<label><b><font face="geneva">*CPF:</font></b></label><p>Somente Numeros</p>
+			<input name="cpf" placeholder="CPF" id="cpf" method="post" type="textx" maxlength="14" size="30" onkeypress="mascara(this,'###.###.###-##')" onkeyup="somenteNumeros(this);"required>
 
 			<br><br>
-			<label><b><font face="geneva">RG:</font></b></label>
-			<input name="rg" placeholder="RG" id="rg" method="post" type="textx" maxlength="12" size="30" onkeypress="mascara(this,'##.###.###-#')">
+			<label><b><font face="geneva">RG:</font></b></label><p>Somente Numeros</p>
+			<input name="rg" placeholder="RG" id="rg" method="post" type="textx" maxlength="12" size="30" onkeypress="mascara(this,'##.###.###-#')"onkeyup="somenteNumeros(this);">
 
 			<br><br>
-			<label><b><font face="geneva">*Celular:</font></b></label>
-			<input name="tel_celular_f" placeholder="Celular" id="tel_celular_f" method="post" type="textx" maxlength="13" size="30" onkeypress="mascara(this,'##-#####-####')"required>
+			<label><b><font face="geneva">*Celular:</font></b></label><p>Somente Numeros</p>
+			<input name="tel_celular_f" placeholder="Celular" id="tel_celular_f" method="post" type="textx" maxlength="13" size="30" onkeypress="mascara(this,'##-#####-####')"onkeyup="somenteNumeros(this);"required>
 
 			<br><br>
-			<label><b><font face="geneva">Telefone:</font></b></label>
-			<input name="tel_residencial" placeholder="Telefone" id="tel_residencial" method="post" type="textx" maxlength="12" size="30" onkeypress="mascara(this,'##-####-####')">
+			<label><b><font face="geneva">Telefone:</font></b></label><p>Somente Numeros</p>
+			<input name="tel_residencial" placeholder="Telefone" id="tel_residencial" method="post" type="textx" maxlength="12" size="30" onkeypress="mascara(this,'##-####-####')"onkeyup="somenteNumeros(this);">
 
 			<br><br>
 			<label><b><font face="geneva">*Endereço:</font></b></label>
@@ -92,24 +101,24 @@ else { ?>
 				<input type="textx" name="nome" placeholder="Nome" id="nome" maxlength="100" onkeypress="volta_input(this.id)" size="30" class="text inputErro" value="<?php echo $linha['nome'];?>" required>
 
 				<br><br>
-				<label><b><font face="geneva">*Data de Nascimento:</font></b></label>
-				<input name="data_nascimento" placeholder="Data de Nascimento" id="data_nascimento" method="post" type="textx" maxlength="10" size="30" onkeypress="mascara(this,'##/##/####')" value="<?php echo $linha['data_nascimento'];?>"required>
+				<label><b><font face="geneva">*Data de Nascimento:</font></b></label><p>Somente Numeros</p>
+				<input name="data_nascimento" placeholder="Data de Nascimento" id="data_nascimento" method="post" type="textx" maxlength="10" size="30" onkeypress="mascara(this,'##/##/####')" value="<?php echo $linha['data_nascimento'];?>"onkeyup="somenteNumeros(this);"required>
 
 				<br><br>
-				<label><b><font face="geneva">*CPF:</font></b></label>
-				<input name="cpf" placeholder="CPF" id="cpf" method="post" type="textx" maxlength="14" size="30" onkeypress="mascara(this,'###.###.###-##')" value="<?php echo $linha['cpf'];?>"required>
+				<label><b><font face="geneva">*CPF:</font></b></label><p>Somente Numeros</p>
+				<input name="cpf" placeholder="CPF" id="cpf" method="post" type="textx" maxlength="14" size="30" onkeypress="mascara(this,'###.###.###-##')" value="<?php echo $linha['cpf'];?>"onkeyup="somenteNumeros(this);"required>
 
 				<br><br>
-				<label><b><font face="geneva">RG:</font></b></label>
-				<input name="rg" placeholder="RG" id="rg" method="post" type="textx" maxlength="12" size="30" onkeypress="mascara(this,'##.###.###-#')" value="<?php echo $linha['rg'];?>">
+				<label><b><font face="geneva">RG:</font></b></label><p>Somente Numeros</p>
+				<input name="rg" placeholder="RG" id="rg" method="post" type="textx" maxlength="12" size="30" onkeypress="mascara(this,'##.###.###-#')" value="<?php echo $linha['rg'];?>"onkeyup="somenteNumeros(this);">
 
 				<br><br>
-				<label><b><font face="geneva">*Celular:</font></b></label>
-				<input name="tel_celular_f" placeholder="Celular" id="tel_celular_f" method="post" type="textx" maxlength="13" size="30" onkeypress="mascara(this,'##-#####-####')" value="<?php echo $linha['tel_celular_f'];?>"required>
+				<label><b><font face="geneva">*Celular:</font></b></label><p>Somente Numeros</p>
+				<input name="tel_celular_f" placeholder="Celular" id="tel_celular_f" method="post" type="textx" maxlength="13" size="30" onkeypress="mascara(this,'##-#####-####')" value="<?php echo $linha['tel_celular_f'];?>"onkeyup="somenteNumeros(this);"required>
 
 				<br><br>
-				<label><b><font face="geneva">Telefone:</font></b></label>
-				<input name="tel_residencial" placeholder="Telefone" id="tel_residencial" method="post" type="textx" maxlength="12" size="30" onkeypress="mascara(this,'##-####-####')" value="<?php echo $linha['tel_residencial'];?>">
+				<label><b><font face="geneva">Telefone:</font></b></label><p>Somente Numeros</p>
+				<input name="tel_residencial" placeholder="Telefone" id="tel_residencial" method="post" type="textx" maxlength="12" size="30" onkeypress="mascara(this,'##-####-####')" value="<?php echo $linha['tel_residencial'];?>"onkeyup="somenteNumeros(this);">
 
 				<br><br>
 				<label><b><font face="geneva">*Endereço:</font></b></label>
